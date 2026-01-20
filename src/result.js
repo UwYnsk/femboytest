@@ -10,7 +10,7 @@
         if (fempoints >= 18) {
             resultText = "ТЫ СВЕРХФЕМБОЙ! UwU :3 ★";
             resultStyle = "color: #ff00ff; text-shadow: 0 0 10px #ff00ff;";
-            imageName = "/jpg/boykisser.jpg";
+            imageName = "/jpg/astolfo.jpg";
         } else if (fempoints >= 6) {
             resultText = "Ты фембой!";
             resultStyle = "color: #ff66cc; text-shadow: 0 0 10px #ff66cc;";
