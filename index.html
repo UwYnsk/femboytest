@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на фембоя</title>
+    <style>
+        /* Ключевые анимации: мигающий фон и пульсация */
+        @keyframes blinkBackground {
+          0%, 49% { background-color: #ff0000; } /* Красный */
+          50%, 100% { background-color: #00ff00; } /* Зеленый */
+        }
+
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+
+        @keyframes textGlitch {
+          0% { text-shadow: 2px 0 #00ff00, -2px 0 #ff0000; }
+          50% { text-shadow: -2px 0 #00ff00, 2px 0 #ff0000; }
+          100% { text-shadow: 2px 0 #00ff00, -2px 0 #ff0000; }
+        }
+
+        /* Основные стили */
+        body {
+          font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+          animation: blinkBackground 0.2s infinite alternate; /* Очень быстрое мигание */
+          color: #000; /* Черный текст для контраста */
+          margin: 20px;
+          padding: 20px;
+          overflow-x: hidden;
+        }
+
+        h2 {
+          color: #000;
+          background-color: #ffff00; /* Ядовито-желтый */
+          padding: 10px;
+          border-radius: 0;
+          border: 5px dashed #ff00ff; /* Пурпурный пунктир */
+          animation: textGlitch 0.3s infinite;
+          margin-top: 30px;
+        }
+
+        section {
+          background: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный для легкого "гашения" фона */
+          padding: 15px;
+          margin-bottom: 20px;
+          border: 8px solid;
+          border-image: linear-gradient(45deg, #ff0000, #00ff00) 1;
+          animation: pulse 3s infinite ease-in-out;
+        }
+
+        /* Общие стили кнопок */
+        button {
+          display: block;
+          width: 100%;
+          margin: 10px 0;
+          padding: 15px;
+          font-size: 1.2em;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+          text-align: center;
+          transition: all 0.1s;
+          text-shadow: 1px 1px 2px black;
+          border-radius: 50px; /* Круглые кнопки для сюрреализма */
+          box-shadow: 5px 5px 0px #000000;
+        }
+
+        /* Стили для не нажатых кнопок (три варианта) */
+        button:nth-child(odd):not(.clicked) {
+          background: linear-gradient(45deg, #00ff00, #ffff00); /* Кислотно-зеленый/желтый */
+          color: #ff00ff;
+        }
+        button:nth-child(even):not(.clicked) {
+          background: linear-gradient(45deg, #ff0000, #ff6600); /* Красный/оранжевый */
+          color: #00ffff;
+        }
+        /* Особый стиль для "третьих" кнопок (про маму) */
+        button:last-child:not(.clicked) {
+          background: linear-gradient(45deg, #0000ff, #ff00ff); /* Синий/пурпурный */
+          color: #ffff00;
+        }
+
+        /* Стиль для НАЖАТОЙ кнопки - ЯВНО ОТЛИЧНЫЙ */
+        button.clicked {
+          background: #ffffff !important; /* Белый фон */
+          color: #000000 !important; /* Черный текст */
+          border: 5px solid #000 !important;
+          box-shadow: 0 0 20px 10px #ffff00, inset 0 0 20px 5px #ff0000 !important; /* Свечение */
+          animation: none !important; /* Останавливаем анимацию на нажатой кнопке */
+          transform: scale(0.98);
+        }
+
+        /* Эффект при наведении на ненажатую кнопку */
+        button:hover:not(.clicked) {
+          filter: brightness(1.5) contrast(1.5);
+          transform: rotate(1deg);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 3em; color: #000; background: #ff0; border: 10px dotted #f0f;">ТЕСТ НА ФЕМБОЯ</h1>
+
+    <section>
+        <h2>Ты любишь носить чулочки?</h2>
+        <button id="b1">Да</button>
+        <button id="b2">Нет</button>
+        <button id="b3">Меня мама побьет</button>
+    </section>
+    <section>
+        <h2>Ты любишь целовать мальчиков?</h2>
+        <button id="b4">Ес</button>
+        <button id="b5">НЕЕЕТ</button>
+        <button id="b6">я твою маму факал</button>
+    </section>
+    <section>
+        <h2>Часто ли ты говоришь UwU?</h2>
+        <button id="b7">UwU :3</button>
+        <button id="b8">Ага</button>
+        <button id="b9">Я твою мам...OwO</button>
+    </section>
+    <section>
+        <h2>Чего нету у жени?</h2>
+        <button id="b10">Пениса</button>
+        <button id="b11">Мамы</button>
+        <button id="b12">Ня :3</button>
+    </section>
+    <section>
+        <h2>Ты считаешь себя фембоем?</h2>
+        <button id="b13">Да</button>
+        <button id="b14">Нет</button>
+        <button id="b15">Я не знаю</button>
+    </section>
+    <section>
+        <h2>Что бы ты одел?</h2>
+        <button id="b16">Футболочку, юбочки и чулочки :3</button>
+        <button id="b17">Футболку с бойкиссером</button>
+        <button id="b18">Твою мамашу на хуй</button>
+    </section>
+    <section>
+        <h2>Обнимать мальчиков это...</h2>
+        <button id="b19">Мило :3</button>
+        <button id="b20">Круто</button>
+        <button id="b21">У меня мама сдохнет</button>
+    </section>
+    <section>
+        <h2>Если тебя ударили?</h2>
+        <button id="b22">Я отпизжу изнасилую и уничтожу того кто меня ударил</button>
+        <button id="b23">Ай! </button>
+        <button id="b24">У меня хуй встал</button>
+    </section>
+    <section>
+        <h2>Тебе нравится розови цвет?</h2>
+        <button id="b25">Дя</button>
+        <button id="b26">Неа</button>
+        <button id="b27">Конечно! Ведь это цвет вытекающих мозгов!!!</button>
+    </section>
+    <section>
+        <h2>Ты бы одел ошейник?</h2>
+        <button id="b28">Да</button>
+        <button id="b29">What a hell is this?</button>
+        <button id="b30">Я че собака нахуй?</button>
+    </section>
+    <section>
+        <h2>Егор молодец?</h2>
+        <button id="b31">Да</button>
+        <button id="b32">Да</button>
+        <button id="b33">Конечно</button>
+    </section>
+    <section>
+        <h2>Тебе нравится твоя внешность?</h2>
+        <button id="b34">да</button>
+        <button id="b35">нет</button>
+        <button id="b36">50/50</button>
+    </section>
+    <section>
+        <h2>Бойкиссер это?</h2>
+        <button id="b37">милашка</button>
+        <button id="b38">котик белый</button>
+        <button id="b39">вонючая лохматая тварь</button>
+    </section>
+    <section>
+        <h2>Играл в changed?</h2>
+        <button id="b40">Да</button>
+        <button id="b41">Не знаю что это</button>
+        <button id="b42">Ватафак</button>
+    </section>
+    <section>
+        <h2>Сверху или снизу?</h2>
+        <button id="b43">Снизу</button>
+        <button id="b44">Сверху</button>
+        <button id="b45">На трибуне перед кучей народа с флагом рейха в руках!</button>
+    </section>
+    <section>
+        <h2>Ты красивый по твоему мнению?</h2>
+        <button id="b46">Да</button>
+        <button id="b47">Нет (((((</button>
+        <button id="b48">Нормик</button>
+    </section>
+    <section>
+        <button id="resultat">Подвести результат</button>
+    </section>
+
+    <script>
+let fempoints = 0;
+
+// Объект с правильными ответами и их стоимостью в очках
+const correctAnswers = {
+    "b1": 1,   "b2": -1,   "b3": 0,
+    "b4": 1,   "b5": -1,   "b6": -2,
+    "b7": 2,   "b8": 1,    "b9": -1,
+    "b10": 0,  "b11": 1,   "b12": 1,
+    "b13": 1,  "b14": -1,  "b15": 0,
+    "b16": 2,  "b17": 1,   "b18": -2,
+    "b19": 2,  "b20": 1,   "b21": -1,
+    "b22": -1, "b23": 1,   "b24": 2,
+    "b25": 1,  "b26": -1,  "b27": 2,
+    "b28": 2,  "b29": 0,   "b30": -1,
+    "b31": 0,  "b32": 0,   "b33": 1,
+    "b34": 1,  "b35": -1,  "b36": 0,
+    "b37": 1,  "b38": 0,   "b39": -1,
+    "b40": 1,  "b41": 0,   "b42": -1,
+    "b43": 1,  "b44": -1,  "b45": 1,
+    "b46": 1,  "b47": -1,  "b48": 0
+};
+
+// Создаем объект с локальными путями к картинкам
+const resultImages = {
+    superFemboy: "astolfo.jpg",
+    femboy: "boykisser.jpg",
+    antiFemboy: "i.jpg"
+};
+
+function handleButtonClick(event) {
+    const buttonId = event.target.id;
+    
+    // 1. Убираем класс 'clicked' у ВСЕХ кнопок в текущей секции
+    const currentSection = event.target.closest('section');
+    const allButtonsInSection = currentSection.querySelectorAll('button');
+    allButtonsInSection.forEach(btn => {
+        btn.classList.remove('clicked');
+    });
+
+    // 2. Добавляем класс 'clicked' только к нажатой кнопке
+    event.target.classList.add('clicked');
+
+    // 3. Считаем очки, если это кнопка ответа (не кнопка результата)
+    if (buttonId !== 'resultat' && correctAnswers[buttonId] !== undefined) {
+        fempoints += correctAnswers[buttonId];
+        console.log(`Нажата кнопка ${buttonId}, добавлено ${correctAnswers[buttonId]} очков. Текущий счёт: ${fempoints}`);
+    }
+    
+    // 4. Визуальный эффект
+    event.target.style.animation = 'pulse 0.5s';
+    setTimeout(() => {
+        if (event.target.classList.contains('clicked')) {
+            event.target.style.animation = '';
+        }
+    }, 500);
+}
+
+// Назначаем обработчики клика на все кнопки
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', handleButtonClick);
+});
+
+// Особый обработчик для кнопки результата
+document.getElementById('resultat').addEventListener('click', function(event) {
+    // Предотвращаем стандартную обработку
+    event.stopPropagation();
+    
+    // Прокручиваем страницу вверх перед показом результата
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    
+    // Ждем немного, чтобы скролл завершился
+    setTimeout(() => {
+        // Определяем результат на основе очков
+        let resultText = "";
+        let resultStyle = "";
+        let imageUrl = "";
+        
+        // Используем локальные картинки из объекта resultImages
+        if (fempoints >= 18) {
+            resultText = "ТЫ СВЕРХФЕМБОЙ! UwU :3 ★";
+            resultStyle = "color: #ff00ff; font-size: 2em; text-shadow: 0 0 10px #ff00ff;";
+            imageUrl = resultImages.superFemboy;
+        } else if (fempoints >= 6) {
+            resultText = "Ты фембой! ";
+            resultStyle = "color: #ff66cc; font-size: 1.5em;";
+            imageUrl = resultImages.femboy;
+        } else {
+            resultText = "ТЫ АНТИФЕМБОЙ! Жди сват";
+            resultStyle = "color: #ff0000; font-size: 2em; text-shadow: 0 0 10px #ff0000;";
+            imageUrl = resultImages.antiFemboy;
+        }
+        
+        // Создаём и показываем результат
+        const resultDiv = document.createElement('div');
+        resultDiv.id = 'finalResult';
+        
+        // Формируем HTML с картинкой
+        let resultHTML = `
+            <h2 style="${resultStyle}">ТВОЙ РЕЗУЛЬТАТ: ${fempoints} очков</h2>
+            <h3 style="${resultStyle}">${resultText}</h3>
+        `;
+        
+        // Добавляем картинку, если URL указан
+        if (imageUrl) {
+            resultHTML += `
+                <div style="margin: 20px 0;">
+                    <img src="${imageUrl}" alt="Результат теста" 
+                         style="max-width: 300px; 
+                                max-height: 200px; 
+                                border: 5px solid #ff00ff; 
+                                border-radius: 15px;
+                                box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
+                                animation: pulse 2s infinite;">
+                </div>
+            `;
+        }
+        
+        // Добавляем кнопку повторного прохождения
+        resultHTML += `
+            <button onclick="location.reload()" 
+                    style="background: #00ff00; 
+                           color: #000; 
+                           padding: 12px 24px; 
+                           margin: 10px; 
+                           font-size: 1.2em;
+                           border: 3px solid #000;
+                           border-radius: 25px;
+                           cursor: pointer;">
+                Пройти ещё раз
+            </button>
+        `;
+        
+        resultDiv.innerHTML = resultHTML;
+        
+        // Стили для контейнера результата
+        resultDiv.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.95);
+            padding: 30px;
+            border: 8px dashed #ff00ff;
+            z-index: 1000;
+            text-align: center;
+            animation: pulse 1.5s infinite;
+            max-width: 80%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 0 50px 20px rgba(255, 0, 255, 0.5);
+        `;
+        
+        // Удаляем предыдущий результат, если есть
+        const oldResult = document.getElementById('finalResult');
+        if (oldResult) oldResult.remove();
+        
+        document.body.appendChild(resultDiv);
+        
+        // ДОПОЛНИТЕЛЬНО: Рекомендую добавить блокировку прокрутки
+        document.body.style.overflow = 'hidden';
+        
+        // И функцию для очистки при перезагрузке
+        resultDiv.querySelector('button').addEventListener('click', function() {
+            document.body.style.overflow = '';
+        });
+        
+    }, 300);
+});
+    </script>
+</body>
+</html>
